@@ -43,9 +43,9 @@ def csv2gpx(file, verbose=False, debug=False):
         for id, data in zip(headers, row):
             wrapper[id] = data
         # TODO: finish sanitizing date/time and pass it to gpxpy
-        sanitized_time = f"{wrapper['date']} {wrapper['time']}"
+        sanitized_time = datetime.strptime(f"{wrapper['date']} {wrapper['time']}", '%m/%d/%Y %H:%M.%S')
         gpx_segment.points.append(gpxpy.gpx.GPXTrackPoint(latitude=wrapper['latitude'], longitude=wrapper['longitude'],
-                                                          elevation=wrapper['gps_alt'], time=wrapper['time'],
+                                                          elevation=wrapper['gps_alt'], time=sanitized_time,
                                                           speed=wrapper['speed']))
 
     try:
