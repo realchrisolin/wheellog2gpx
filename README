@@ -1,3 +1,11 @@
-pass CSV generated from WheelLog as an argument
+usage: wheellog2gpx.py [-h] [-v] [-d] csv_file
 
-Be aware this script is not fully functional, but is nearly complete and better it is preserved on the internet until I've finished it.
+WheelLog2GPX
+
+positional arguments:
+  csv_file
+
+  optional arguments:
+    -h, --help     show this help message and exit
+	-v, --verbose  additional console logging
+	-d, --debug    print each line from input CSV
