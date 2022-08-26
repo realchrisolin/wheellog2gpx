@@ -13,7 +13,7 @@ def csv2gpx(file, verbose=False, debug=False):
     csv_data = open(file, 'r')
     csv_reader = csv.reader(csv_data)
     gpx_data = gpxpy.gpx.GPX()
-    gpx_file = file[:-3] + 'csv' # export to the same directory/filename as .csv but with .gpx extension
+    gpx_file = file[:-3] + 'gpx' # export to the same directory/filename as .csv but with .gpx extension
     reader_index = 0
     tz = time.tzname
     data_points = []
